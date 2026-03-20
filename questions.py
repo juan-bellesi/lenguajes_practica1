@@ -1,17 +1,26 @@
 import random
 
-words = [
-    "python",
-    "programa",
-    "variable",
-    "funcion",
-    "bucle",
-    "cadena",
-    "entero",
-    "lista",
-]
+categorias = {
+    "programacion": ["python", "variable", "funcion", "bucle"],
+    "tipos": ["cadena", "entero", "lista"],
+    "general": ["programa"]
+}
 
-word = random.choice(words)
+print("Categorías disponibles:")
+for categoria in categorias:
+    print("-", categoria)
+
+# Elegir categoría correctamente
+while True:
+    categoria_elegida = input("Elegí una categoría: ")
+    if categoria_elegida in categorias:
+        break
+    else:
+        print("Categoría no válida")
+
+# Recién acá elegimos la palabra
+word = random.choice(categorias[categoria_elegida])
+
 guessed = []
 attempts = 6
 puntaje = 0
@@ -29,15 +38,15 @@ while attempts > 0:
     print(progress)
 
     if "_" not in progress:
-        puntaje +=6
+        puntaje += 6
         print("¡Ganaste!")
         break
 
     print(f"Intentos restantes: {attempts}")
     print(f"Letras usadas: {', '.join(guessed)}")
 
-    letter = input("Ingresá una letra: ")
-    
+    letter = input("Ingresá una letra: ").lower()
+
     if len(letter) != 1 or not letter.isalpha():
         print("Entrada no válida")
         continue
@@ -58,4 +67,5 @@ while attempts > 0:
 else:
     puntaje = 0
     print(f"¡Perdiste! La palabra era: {word}")
-     
+
+print(f"Puntaje final: {puntaje}")
