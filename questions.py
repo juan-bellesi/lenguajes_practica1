@@ -10,23 +10,25 @@ print("Categorías disponibles:")
 for categoria in categorias:
     print("-", categoria)
 
-# Elegir categoría correctamente
+#Aca el usuario elige una de las categorias
 while True:
     categoria_elegida = input("Elegí una categoría: ")
     if categoria_elegida in categorias:
         break
     else:
         print("Categoría no válida")
+        
+palabras_disponibles = random.sample(categorias[categoria_elegida], len(categorias[categoria_elegida]))
 
-# Recién acá elegimos la palabra
-word = random.choice(categorias[categoria_elegida])
-
-guessed = []
-attempts = 6
 puntaje = 0
 
-print("¡Bienvenido al Ahorcado!")
+print ("Bienvenido al Ahorcado")
 print()
+
+for word in palabras_disponibles:
+
+    guessed = []
+    attempts = 6
 
 while attempts > 0:
     progress = ""
