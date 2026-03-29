@@ -13,10 +13,9 @@ for i in range(1,numero+1):
     else:
         otra_lista.append(i)
         
-for j in range(len(lista_multiplos)):
-    print(lista_multiplos[j])
+for elemento in lista_multiplos:
+    print(elemento)
 
-for k in range(len(otra_lista)):
-    print(otra_lista[k])
-
+for elemento in otra_lista:
+    print(elemento)
     
