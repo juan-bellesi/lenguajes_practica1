@@ -18,3 +18,6 @@ minutos = segundos_restantes // 60
 
 print (f"La cantidad de minutos es {minutos}")
 
+segundos_finales = segundos_restantes % 60
+
+print (f"En conclusion, la cantidad de horas ingresadas es {horas}, la de minutos es {minutos} y te sobraron {segundos_finales} segundos.")
