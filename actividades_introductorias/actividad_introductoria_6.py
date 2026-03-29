@@ -13,9 +13,11 @@ for i in range(1,numero+1):
     else:
         otra_lista.append(i)
         
-for elemento in lista_multiplos:
-    print(elemento)
+#for elemento in lista_multiplos:
+ #   print(elemento)
 
-for elemento in otra_lista:
-    print(elemento)
-    
+#for elemento in otra_lista:
+#    print(elemento)
+
+print(f"Multiplos de 5: {lista_multiplos}")
+print(f"Lista resto: {otra_lista}")
